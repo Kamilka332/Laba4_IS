@@ -31,7 +31,7 @@ values = [
 ]
 P, Y = [], []
 
-pattern = r'[А-я,.:; ]+'
+pattern = r'[А-я,.:;?! ]+'
 phrase = input('Введите фразу с клавиатуры: ')
 while re.fullmatch(pattern, phrase) is None:
     phrase = input('Введенная строка некоректна, повторите ввод: ')
@@ -43,7 +43,7 @@ for n in primes():
     P.append(n)
 while True:
     p, q = rnd.choice(P), rnd.choice(P)
-    if p != q and p > 2 and q > 2:
+    if p != q and (p * q > (len(values))):
         break
 # Step 2
 n = p * q
